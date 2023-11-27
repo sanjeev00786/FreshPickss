@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../../css/authentication/auth.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="small-heading">
+      
+    </div>
+    <div class="login-container">
+      <div id="main">
+        <div class="icon-container">
+          <img src="../../assets/SignInLogo.svg" alt="Login Image">
+        </div>
+        <h1>Welcome back</h1>
+        <h3>Don't have an account? <a id="sign-up" style="color: 1BA584;">Sign Up</a></h3>
+        <div class="form">
+          <div class="input-container">
+            <label for="email">Email address<span class="required" style="color: red;">*</span></label>
+            <input id="email" type="text" placeholder="Enter your email">
+          </div>
+          <div class="input-container">
+            <label for="password">Password<span class="required" style="color: red;">*</span></label>
+            <input id="password" type="text" placeholder="Enter your password">
+          </div>
+          <h5><a>forgotten password?</a></h5>
+          <button id="submit">Log In</button>
+          <!-- <button id = "sign-up">Sign Up</button> -->
+        </div>
+      </div>
+
+      <div id="create-acct">
+        <div class="icon-container">
+          <img src="../../assets/SignInLogo.svg" alt="Login Image">
+        </div>
+        <h1>Create an Account</h1>
+        <h3>Already have an account? <a id="return-btn"
+            style="color: #487556; text-decoration: none; font-weight: bold;">Sign In</a></h3>
+        <div class="form">
+          <div class="input-container">
+            <label for="name">Full Name<span class="required" style="color: red;">*</span></label>
+            <input id="name-signup" type="text" placeholder="Steven Stallion"></input>
+          </div>
+          <div class="input-container">
+            <label for="email">Email address<span class="required" style="color: red;">*</span></label>
+            <input id="email-signup" type="text" placeholder="Example@gmail.com">
+          </div>
+          <div class="input-container">
+            <label for="password">Password<span class="required" style="color: red;">*</span></label>
+            <input id="password-signup" type="password" placeholder="**************"></input>
+          </div>
+          <div class="input-container">
+            <label for="password">Password<span class="required" style="color: red;">*</span></label>
+            <input id="confirm-password-signup" type="password" placeholder="**************"></input>
+          </div>
+          <label class="checkbox-container">
+            <input type="checkbox" id="agree-checkbox">
+            <span class="checkmark"></span>
+            I agree to the <a href="#" style="color: green; text-decoration: none; margin-left: 10px;"> terms and
+              conditions</a> .
+          </label>
+          <button id="create-acct-btn">Sign Up</button>
+          <!-- <button id = "sign-up">Sign Up</button> -->
+        </div>
+      </div>
+
+    </div>
+    <div class="hide-big">    
+      <div class="image-container">
+        <img src="../../assets/SignInUpPhoto.png" alt="Login Image">
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="../../src/authModules/auth.js"></script>
+</body>
+
+</html>

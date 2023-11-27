@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/5813783417.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/User/userHomePage.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="../../assets/logo.svg" alt="FreshPicks Logo">
+            </div>
+            <div class="profile-container">
+                <img src="../../assets/profile.svg" alt="Profile Icon">
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container-wrapper">
+            <div class="myContainer">
+                <div class="search-container">
+                    <div class="input-group search-bar">
+                        <input type="text" class="form-control mysearch" placeholder="Find Events" aria-label="Search"
+                            aria-describedby="search-icon">
+                        <div class="input-group-append">
+                            <span class="input-group-text search-icon" id="search-icon">
+                                <img src="../../assets/search.svg" alt="Search Icon">
+                            </span>
+                        </div>
+                    </div>
+                    <button class="btn filter-btn" data-bs-toggle="modal" data-bs-target="#filterModal">
+                        <img src="../../assets/filter.svg" alt="Filter Icon">
+                        <span class="filter-count hide-count">0</span>
+                    </button>
+
+
+
+                    <!-- Filter Modal -->
+                    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="filterModalLabel">Filters</h1>
+                                    <button type="button" class="btn btn-secondary class-clear-filters-button"
+                                        id="clearFiltersButton">Clear Filters</button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Add your filter options here -->
+                                    <form>
+                                        <div class="mb-3 category-div" id="categoryBox">
+                                            <label for="Category" class="filter-category-heading">Category:</label>
+                                            <div class="category-options-div" id="categoryOptions">
+                                                <!-- Category will be added here by JavaScript -->
+                                            </div>
+                                            <!-- Add more categories as needed -->
+                                        </div>
+                                        <div class="mb-3" id="distanceBox">
+                                            <label for="filterDistance"
+                                                class="form-label filter-distance-heading">Distance:</label>
+                                            <div class="position-relative">
+                                                <input type="range" class="form-range" id="filterDistance" min="0"
+                                                    max="50" value="5">
+                                                <div class="position-absolute top-0 start-50 translate-middle"
+                                                    id="sliderValue">5Km</div>
+                                            </div>
+                                            <div class="d-flex justify-content-between display-range">
+                                                <span>0Km</span>
+                                                <span>50Km</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 date-div">
+                                            <label for="Date" class="filter-date-heading">Date:</label>
+                                            <div class="date-options-div" id="dateOptions">
+                                                <!-- Dates will be added here by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="filter-footer">
+                                    <div>
+                                        <button type="button" class="cancel-filter-btn"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="apply-filter-btn" id="applyFilters">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="d-none d-md-block">
+                    <div class="row hello">
+                        <div class="col-md-6">
+                            <button class="btn btn-block desktop-display-buttons" id="clearBtn">Clear Filters</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-block desktop-display-buttons" id="searchBtn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <audio id="popupSound" src="../../assets/sounds/popSound.mp3"></audio>
+                <div id="showMaps" class="show-maps"></div>
+            </div>
+
+
+            <div class="col-12 my-card-listing" id="cardsListing">
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; FreshPicks</p>
+    </footer>
+
+    <!-- Bootstrap and Font Awesome JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="../../src/UserModules/userMarketListing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Market</title>
+    <link rel="stylesheet" href="../../css/Organizer/AddMarket.css">
+    <link rel="stylesheet" href="../../css/Loader.css">
+    <link rel="stylesheet" href="../../css/CustomAlert.css">
+
+</head>
+
+<body>
+    <div id="preloader">
+        <img src="../../assets/favico 2.svg" alt="">
+    </div>
+    <header>
+        <h1>Edit Market</h1>
+    </header>
+
+    <form novalidate>
+        <label for="marketName">Market Name:</label>
+        <input type="text" id="marketName" name="marketName" required><br>
+
+        <label for="location">Search for a Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <div id="googleMap" style="width: 100%; height: 400px;"></div><br>
+
+        <label for="dateTime">Market Date and Time:</label>
+        <input type="datetime-local" id="dateTime" name="dateTime" required><br>
+
+        <div id="category-container"></div><br>
+
+        <div id="addVendorsBlock">
+            <h3>Vendors</h3>
+            <img src="/assets/Add Parner.svg" alt="Add Vendors">
+        </div><br>
+
+        <div id="slider-container">
+            <div class="slider"></div>
+        </div><br>
+
+        <div>
+            <label for="image">Add Image:</label>
+            <div id="imageDropZone" class="drop-zone">
+                <p id="dropZoneText">Drag & drop image here, or click to browse</p>
+                <input type="file" id="image" name="image" accept="image/*" multiple style="display: none;">
+                <img id="imagePreview" alt="Image Preview" style="max-width: 100%;">
+                <div id="imagePreviewContainer"></div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="video">Add Video:</label>
+            <div id="videoDropZone" class="drop-zone">
+                <p>Drag & drop video here, or click to browse</p>
+                <input type="file" id="video" name="video" accept="video/*" style="display: none;">
+                <div id="videoPreviewContainer"></div>
+            </div>
+        </div>
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea><br>
+
+        <div id="faqContainer">
+            <label>Frequently Asked Questions:</label>
+            <div class="faq">
+                <input type="text" name="question" placeholder="Question">
+                <input type="text" name="answer" placeholder="Answer">
+            </div>
+        </div>
+        <br><br>
+        <button type="button" id="addFaq">Add FAQ</button><br><br>
+
+        <button type="submit" id="publishBtn">Update</button>
+    </form>
+    <script type="module" src="../../src/OrganizerModules/EditMarket.js" defer></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC78YWX15M8UW4ECURpuG-Ro9SVKllrhXY&libraries=places&callback=initMap">
+    </script>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Vendor Information</h2>
+            <div id="vendorProfile" class="avatar-image">
+                <input type="file" id="profileInput" accept="image/*" style="display: none;">
+                <div id="profilePreviewContainer">
+                    <img id="profilePreview" src="/assets/Frame 37344.svg" alt="Default Avatar">
+                </div>
+            </div><br>
+            <input type="text" id="userName" placeholder="Name">
+            <select id="modalCategories"></select>
+            <textarea id="additionalInfo" placeholder="Additional Information"></textarea>
+            <div class="buttons">
+                <button id="saveButton">Save</button>
+                <button id="cancelButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="finishModal" class="modal">
+        <div class="modal-content">
+          <h2>Market Updated</h2>
+          <img src="../../assets/Party Popper.svg" alt="Celebration Icon">
+          <p>Congratulations! Your Market is Update</p>
+          <button id="finishBtn">Finish</button>
+        </div>
+      </div>
+      <div id="customToast" class="toast">
+        <p id="toastMessage"></p>
+    </div>
+</body>
+
+</html>
+
+

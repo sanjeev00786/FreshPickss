@@ -1,0 +1,44 @@
+:root {
+    --preloader-bg-gradient: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.7));
+    --preloader-icon-width: 120px;
+    --preloader-icon-height: 120px;
+    --preloader-animation-duration: 2s;
+    --preloader-opacity: 0.9;
+    --toast-bg-color: #487556;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--preloader-bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: var(--preloader-opacity);
+    transition: opacity 0.5s ease-in-out;
+}
+
+#preloader img {
+    width: var(--preloader-icon-width);
+    height: var(--preloader-icon-height);
+    animation: spin var(--preloader-animation-duration) linear infinite;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background-color: var(--toast-bg-color);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    pointer-events: none;
+} 
+

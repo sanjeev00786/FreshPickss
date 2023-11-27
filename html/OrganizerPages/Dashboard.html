@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script type="module" src="../../src/OrganizerModules/Dashboard.js" defer></script>
+    <link rel="stylesheet" href="../../css/Organizer/Dashboard.css">
+    <link rel="stylesheet" href="../../css/Loader.css">
+    <link rel="stylesheet" href="../../css/CustomAlert.css">
+    <link rel="stylesheet" href="../../css/OfflineHandler.css">
+</head>
+<body>
+
+    <button id="navMenuBtn" class="nav-menu-btn">&#9776;</button>
+
+    <!-- Navigation menu -->
+    <div id="navMenu" class="nav-menu">
+        <a href="../../html/OrganizerPages/AddMarket.html">Add Market</a>
+        <a href="../../html/OrganizerPages/ManageMarket.html">Manage Market</a>
+    </div>
+
+    <!-- This is for Loader -->
+    <div id="preloader">
+        <img src="../../assets/favico 2.svg" alt="">
+        <div class="loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <img src="../../assets/FreshPickLogo 1.svg" alt="Logo" class="logo_img">
+        </div>
+        <div class="buttons-container">
+            <button id="addMarketBtn" class="add-marker-btn">Add Market</button>
+            <button id="manageMarketBtn" class="manage-marker-btn">Manage Market</button>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <div class="search-container">
+            <img src="../../assets/search.svg" alt="Search" class="search-icon">
+            <input id="searchInput" type="text" placeholder="Find Events">
+        </div>
+    </div>
+
+    <div class="main-content">
+        
+        <!-- Listing Section -->
+        <div class="events">
+            <h1>Current Events</h1>
+            <div class="event"></div>
+        </div>
+
+        <!-- Map Section -->
+        <div id="googleMap">
+        </div>
+    </div>
+
+    <audio id="popupSound" src="../../assets/sounds/popSound.mp3"></audio>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC78YWX15M8UW4ECURpuG-Ro9SVKllrhXY&libraries=places&callback=initMap">
+    </script>
+    <!-- This is for Custom Alert/Toast -->
+    <div id="customToast" class="toast">
+        <p id="toastMessage"></p>
+    </div>
+
+</body>
+</html>
